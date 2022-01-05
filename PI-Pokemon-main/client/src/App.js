@@ -1,9 +1,13 @@
 import './App.css';
+import styled from 'styled-components';
+
+//const Button = styled.button`
+//background: whit`
 
 function App() {
   return (
     <div className="App">
-      <h1>Henry Barreiro</h1>
+      <h1> Clean Code Cuscu </h1>
     </div>
   );
 }
