@@ -1,5 +1,5 @@
 const {Router} = require('express');
-
+const {getAllPoke, getPokeById, getPokeByName, postPokedb} = require('../controllers/pokemonCtrl');
 
 const router = Router();
 router.get('/', async(req, res)=>{

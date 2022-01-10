@@ -2,3 +2,9 @@ para arrancar instalo NPM I tanto en api/ como en client/
 	el resto esta todo instalado
 cree la base de datos en postgres
 	conecte el back en el port 3001 y el front en el port 3000
+luego los modelos con sequelize, uno para type y otro para pokemon
+		la relacion de muchos a muchos en db.js
+
+Rutas, para pokemons y para types, modularizadas en intex.js
+
+controllers, para post, delete y
