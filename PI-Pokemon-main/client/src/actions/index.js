@@ -35,7 +35,7 @@ export const filterType = (type)=>{
 export const getPokemonDetail = (id)=>{
     return async (dispatch)=>{
         try{
-            const pokemon = await axios(`http://localhost:3001/pokemons/%{id}`);
+            const pokemon = await axios.get(`http://localhost:3001/pokemons/%{id}`);
             return dispatch({
                 type: 'GET_POKEMON_DETAIL',
                 payload: pokemon.data
@@ -47,7 +47,7 @@ export const getPokemonDetail = (id)=>{
 export const getPokemonName=(name)=>{
     return async(dispatch)=>{
         try{
-            const pokemonName=await axios(`http://localhost:3001/pokemons?name=${name}`);
+            const pokemonName=await axios.get(`http://localhost:3001/pokemons?name=${name}`);
             return dispatch({
                 type: 'GET_POKEMON_NAME',
                 payload: pokemonName.data
@@ -75,3 +75,18 @@ export const addPokemon=(newPoke)=>{
     }
 };
 
+export const filter=(str)=>{
+    return async(dispatch)=>{
+        try{
+            const [order,fil] = str.split(' ');
+            return dispatch({type: 'FILTER',order,fil});
+        }catch(error){return error}
+    }
+}
+
+export const filterCreate=(str)=>{
+    return async(dispatch)=>{
+        try{
+            const [fil] = str.split(' ');
+            return dispatch ({type: 'FILTERCREATE',})
+        }catch(error){return error}}}
